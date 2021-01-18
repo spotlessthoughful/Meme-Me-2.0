@@ -1,8 +1,8 @@
 //
 //  Meme.swift
-//  Meme Me 1.0
+//  Meme Me 2.0
 //
-//  Created by Nathaniel Lema on 1/14/21.
+//  Created by Nathaniel Lema on 1/17/21.
 //
 
 import Foundation
@@ -14,4 +14,3 @@ struct Meme {
     var originalImage: UIImage?
     var memedImage: UIImage?
 }
-
