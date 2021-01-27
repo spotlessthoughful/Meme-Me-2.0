@@ -1,15 +1,14 @@
 //
-//  SentMemesTableViewController.swift
+//  SentMemesCollectionViewController.swift
 //  Meme Me 2.0
 //
 //  Created by Nathaniel Lema on 1/17/21.
 //
-
 import Foundation
 
 import UIKit
 
-class MemeTableViewController: UITableViewController {
+class SentMemeCollectionViewController: UICollectionViewController {
     
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
@@ -17,7 +16,7 @@ class MemeTableViewController: UITableViewController {
         return appDelegate.memes
     }
     
-    @IBOutlet weak var flowLayout: UITableViewController!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
