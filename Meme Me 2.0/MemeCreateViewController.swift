@@ -117,8 +117,8 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     
     // MARK: Create And Save/Share Meme
     
-    func save()  {
-        let meme = Meme(topText: topTextField!, bottomText: bottomTextField!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+    func save(memedImage: UIImage)  {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         
         // Add it to the memes array in the Application Delegate
         let object = UIApplication.shared.delegate
@@ -179,7 +179,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         activityViewController.popoverPresentationController?.barButtonItem = shareButton
         activityViewController.completionWithItemsHandler = {(type, ok, items, error) in
             if ok {
-                self.save()
+                self.save(memedImage: meme)
             }
         }
         self.present(activityViewController, animated: true, completion: nil)

@@ -30,13 +30,13 @@
         <!--Sent Memes-->
         <scene sceneID="8uH-sP-mgD">
             <objects>
-                <tableViewController id="P9Q-vv-UE2" sceneMemberID="viewController">
+                <tableViewController id="P9Q-vv-UE2" customClass="SentMemeTableViewController" customModule="Meme_Me_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Htr-RO-xkk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kC0-2B-YEX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="kC0-2B-YEX">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kC0-2B-YEX" id="wgp-Bl-wKu">
@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="PW9-p5-wdS">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="I3J-PV-c98">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="c4O-VM-JrZ"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="lEm-py-iZy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -99,7 +99,7 @@
         <!--Sent Memes-->
         <scene sceneID="Lkv-gW-pZk">
             <objects>
-                <collectionViewController id="0t1-fV-XEZ" customClass="SentMemeCollectionViewController" customModule="Meme_Me_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="0t1-fV-XEZ" customClass="SentMemeCollectionViewController" customModule="Meme_Me_2_0" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="i9P-da-6Js">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="X1c-U3-xnM">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCollectionViewCell" id="X1c-U3-xnM" customClass="SentMemeCollectionViewCell" customModule="Meme_Me_2_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JFC-yO-4Lo">
@@ -124,6 +124,9 @@
                                         </imageView>
                                     </subviews>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="memeImageView" destination="lY3-Zc-Opj" id="ZOf-i1-uDR"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -256,7 +259,7 @@
         <!--View Meme Controller-->
         <scene sceneID="6tS-vt-C8D">
             <objects>
-                <viewController id="Jdh-8T-NMS" customClass="ViewMemeController" customModule="Meme_Me_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewMemeController" id="Jdh-8T-NMS" customClass="ViewMemeController" customModule="Meme_Me_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pfe-Km-l4u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

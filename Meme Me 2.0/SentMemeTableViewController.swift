@@ -11,7 +11,7 @@ import UIKit
 
 class SentMemeTableViewController: UITableViewController {
     
-    private let cellreuseIdentifier = "CollectionViewCell"
+    private let cellreuseIdentifier = "TableViewCell"
     private let viewMemeControllerIdentifier = "ViewMemeController"
     
     var memes: [Meme]! {
@@ -20,8 +20,9 @@ class SentMemeTableViewController: UITableViewController {
         return appDelegate.memes
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,13 +30,13 @@ class SentMemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellreuseIdentifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellreuseIdentifier, for: indexPath)
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
-        cell?.imageView?.image = meme.memedImage
-        cell?.textLabel?.text = meme.topText?.text
+        cell.imageView?.image = meme.memedImage
+        cell.textLabel?.text = meme.topText
         
-        return cell!
+        return cell
     }
     
     
@@ -44,10 +45,6 @@ class SentMemeTableViewController: UITableViewController {
         let viewMemeController = self.storyboard!.instantiateViewController(identifier: viewMemeControllerIdentifier) as ViewMemeController
         viewMemeController.meme = meme
         
-        self.navigationController?.pushViewController(viewMemeController, animated: true)
+        self.navigationController!.pushViewController(viewMemeController, animated: true)
     }
-    
-    // IBOutlets
-    
-    @IBOutlet weak var flowLayout: UITableViewController!
 }
