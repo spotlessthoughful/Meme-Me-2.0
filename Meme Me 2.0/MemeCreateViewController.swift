@@ -8,7 +8,7 @@
 import UIKit
 
 class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var imagePickerView: UIImageView!
